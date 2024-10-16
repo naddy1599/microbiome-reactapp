@@ -1,0 +1,119 @@
+body{
+    background-color:#F7F8F3 ;
+}
+
+.bg_sup{
+    background-image: linear-gradient(#f2f3eb , #f2f3eb);
+}
+
+.slider {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-cards {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    scroll-snap-type: x mandatory; /* Optional: Enables snapping */
+}
+
+.slider-card {
+    box-sizing: border-box;
+    padding: 0px 10px;
+    flex: 0 0 auto;
+    width: 50%;
+    height: auto;
+    scroll-snap-align: start;
+}
+
+.slider-button{
+    position: absolute;
+    right: 15px;
+    top: 80px;
+}
+
+.slider-prev {
+    width: 32px;
+    height: 32px;
+    border: 0px;
+    background-image: url("data:image/svg+xml;utf8,<svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='16' cy='16' r='15.5' stroke='%2304395E'/><path d='M20 8L11.8408 15.2526C11.3933 15.6504 11.3933 16.3496 11.8408 16.7474L20 24' stroke='%23878787' stroke-width='1.5'/></svg>");
+}
+
+.slider-next {
+    width: 32px;
+    height: 32px;
+    border: 0px;
+    background-image: url("data:image/svg+xml;utf8,<svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='16' cy='16' r='15.5' stroke='%2304395E'/><path d='M12 24L20.1592 16.7474C20.6067 16.3496 20.6067 15.6504 20.1592 15.2526L12 8' stroke='%23878787' stroke-width='1.5'/></svg>");
+}
+
+.slider-next:disabled{
+    opacity: 0.5;
+}
+
+.slider-prev:disabled{
+    opacity: 0.5;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #D6D6D6;
+    cursor: pointer;
+    border: 1px solid #878787;
+
+}
+
+.dot.active {
+    background-color: #3b3941;
+}
+
+.testimonial_banner{
+    height: 450px;
+}
+
+@media only screen and (max-width:969px){
+
+    .testimonial_banner{
+        height: 525px;
+    }
+
+    .slider-button{
+        position: absolute;
+        right: 12px;
+        top: 50px;
+    }
+
+    .slider-card {
+        box-sizing: border-box;
+        padding: 5px;
+        flex: 0 0 auto;
+        width: 100%;/* Show 1 cards on medium screens */
+        height: auto;
+        scroll-snap-align: start;
+    }
+}
+
+@media only screen and (min-width:600px) and (max-width:969px) {
+    .slider-card {
+        width: 50%; /* Show 2 cards on medium screens */
+    }
+
+    .testimonial_banner{
+        height: 300px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slider-card {
+        width: 33.33%; /* Show 3 cards on larger screens */
+    }
+}
